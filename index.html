@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="vieport" content="width=1100" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<title>Paint</title>
+	</head>
+	<body>
+		<div class="main__content">
+			<div class="content">
+				<canvas id="canvas" width="900" height="600"></canvas>
+			</div>
+			<div class="settings">
+				<div class="settings__setting">
+					<div>Paint brush type</div>
+					<div class="settings__setting_brush-type">
+						<div class="circleType selectorActive"></div>
+						<div class="squareType"></div>
+					</div>
+				</div>
+				<div class="settings__setting">
+					<div>Paint brush size</div>
+					<input type="range" min="5" max="150" step="1" value="10" id="size" oninput="sizePic(value)">
+				</div>
+				<div class="settings__setting">
+					<div>Color selectors</div>
+					<ul id="content__color-selectors">
+						<li class="selectorActive" id="black"></li>
+						<li id="slategray"></li>
+						<li id="gray"></li>
+						<li id="silver"></li>
+						<li id="maroon"></li>
+						<li id="brown"></li>
+						<li id="chocolate"></li>
+						<li id="sandybrown"></li>
+						<li id="indigo"></li>
+						<li id="purple"></li>
+						<li id="darkviolet"></li>
+						<li id="magenta"></li>
+						<li id="darkblue"></li>
+						<li id="blue"></li>
+						<li id="royalblue"></li>
+						<li id="skyblue"></li>
+						<li id="crimson"></li>
+						<li id="red"></li>
+						<li id="salmon"></li>
+						<li id="coral"></li>
+						<li id="darkorange"></li>
+						<li id="orange"></li>
+						<li id="gold"></li>
+						<li id="yellow"></li>
+						<li id="darkgreen"></li>
+						<li id="green"></li>
+						<li id="yellowgreen"></li>
+						<li id="greenyellow"></li>
+						<li id="gainsboro"></li>
+						<li id="whitesmoke"></li>
+						<li id="ghostwhite"></li>
+						<li id="white"></li>
+					</ul>
+				</div>
+				<button id="canvasClear">Clear canvas</button>
+			</div> 
+		</div>
+		<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
