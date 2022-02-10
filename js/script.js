@@ -2,23 +2,18 @@ let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let colorSelectors = $("#content__color-selectors");
 let paintBrushSize, color, isDrawCircle = true;
-
 function sizePic(value) {
 	paintBrushSize = value;
 }
-
 for(let i = 0; i < colorSelectors.children().length; i++){
 	colorSelectors.children()[i].style.backgroundColor = colorSelectors.children()[i].id;
 }
-
 $('.circleType').mousedown(e => {
 	switchBrushType(true);
 });
-
 $('.squareType').mousedown(e => {
 	switchBrushType(false);
 });
-
 function switchBrushType(setDrawCircle){
 	isDrawCircle = setDrawCircle;
 	if(setDrawCircle){
@@ -30,7 +25,6 @@ function switchBrushType(setDrawCircle){
 		$('.circleType').removeClass('selectorActive');
 	}
 }
-
 colorSelectors.mousedown(e => {
 	if(e.target.closest('Li')){
 		color = e.target.id;
@@ -44,7 +38,6 @@ colorSelectors.mousedown(e => {
 		}
 	}
 })
-
 function drawCircle(x, y, radius = 10){	
 	ctx.beginPath();
 	ctx.fillStyle = color && color;
@@ -52,7 +45,6 @@ function drawCircle(x, y, radius = 10){
 	ctx.fill();
 	ctx.closePath();
 }
-
 function drawSquare(x, y, size = 10){
 	ctx.beginPath();
 	ctx.fillStyle = color && color;
@@ -60,7 +52,6 @@ function drawSquare(x, y, size = 10){
 	ctx.fill();
 	ctx.closePath();
 }
-
 $("#canvas").mousemove((e) => {
 	if(e.buttons > 0) {
 		if(isDrawCircle)
@@ -82,7 +73,6 @@ $("#canvasClear").mousedown(() => {
 	ctx.fill();
 	ctx.closePath();
 });
-
 $("#canvas").on("touchmove", (e) => {
 	let rect = e.target.getBoundingClientRect();
 	let x = Math.ceil(e.originalEvent.touches[0].clientX) - rect.left;
