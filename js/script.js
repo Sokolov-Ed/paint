@@ -82,9 +82,13 @@ $("#canvasClear").mousedown(() => {
 	ctx.fill();
 	ctx.closePath();
 });
+
 $("#canvas").on("touchmove", (e) => {
+	let rect = e.target.getBoundingClientRect();
+	let x = Math.ceil(e.originalEvent.touches[0].clientX) - rect.left;
+	let y = Math.ceil(e.originalEvent.touches[0].clientY) - rect.top;
 	if(isDrawCircle)
-		drawCircle(e.offsetX, e.offsetY, paintBrushSize);
+		drawCircle(x, y, paintBrushSize);
 	else
-		drawSquare(e.offsetX, e.offsetY, paintBrushSize);
-})
+		drawSquare(x, y, paintBrushSize);
+});
