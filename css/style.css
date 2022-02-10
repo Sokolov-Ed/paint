@@ -7,6 +7,7 @@ html {
 	min-height: 100%;
 	height: max-content;
 	letter-spacing: .75px;
+	overflow: hidden;
 }
 html, .main__content, .settings, .settings__setting, .settings__setting_brush-type, .content, ul {
 	display: flex;
@@ -50,7 +51,6 @@ html, .main__content, .settings, .settings__setting, .settings__setting_brush-ty
 }
 canvas {
 	border: 1px solid black;
-	overflow: hidden;
 }
 ul {
 	margin: 5px;
