@@ -50,6 +50,7 @@ html, .main__content, .settings, .settings__setting, .settings__setting_brush-ty
 }
 canvas {
 	border: 1px solid black;
+	overflow: hidden;
 }
 ul {
 	margin: 5px;
