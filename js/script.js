@@ -1,7 +1,7 @@
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let colorSelectors = $("#content__color-selectors");
-let paintBrushSize, color, isDrawCircle = true;
+let paintBrushSize, color = "black", isDrawCircle = true;
 
 function sizePic(value) {
 	paintBrushSize = value;
