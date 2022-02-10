@@ -81,4 +81,10 @@ $("#canvasClear").mousedown(() => {
 	ctx.fillRect(0, 0, 900, 600);
 	ctx.fill();
 	ctx.closePath();
+});
+$("#canvas").on("touchmove", (e) => {
+	if(isDrawCircle)
+		drawCircle(e.offsetX, e.offsetY, paintBrushSize);
+	else
+		drawSquare(e.offsetX, e.offsetY, paintBrushSize);
 })
