@@ -11,36 +11,36 @@ for(let i = 0; i < colorSelectors.children().length; i++){
 	colorSelectors.children()[i].style.backgroundColor = colorSelectors.children()[i].id;
 }
 
-$('.circleType').mousedown(e => {
+$('.circle_type').mousedown(e => {
 	switchBrushType(true);
 });
 
-$('.squareType').mousedown(e => {
+$('.square_type').mousedown(e => {
 	switchBrushType(false);
 });
 
 function switchBrushType(setDrawCircle){
 	isDrawCircle = setDrawCircle;
 	if(setDrawCircle){
-		$('.circleType').addClass('selectorActive');
-		$('.squareType').removeClass('selectorActive');
+		$('.circle_type').addClass('selector_active');
+		$('.square_type').removeClass('selector_active');
 	}
 	else{
-		$('.squareType').addClass('selectorActive');
-		$('.circleType').removeClass('selectorActive');
+		$('.square_type').addClass('selector_active');
+		$('.circle_type').removeClass('selector_active');
 	}
 }
 
 colorSelectors.mousedown(e => {
 	if(e.target.closest('Li')){
 		color = e.target.id;
-		$('.circleType').css('background-color', color);
-		$('.squareType').css('background-color', color);
+		$('.circle_type').css('background-color', color);
+		$('.square_type').css('background-color', color);
 		for(let i = 0; i < colorSelectors.children().length; i++){
 			if(colorSelectors.children()[i].id === e.target.id)
-				$(colorSelectors.children()[i]).addClass('selectorActive');
+				$(colorSelectors.children()[i]).addClass('selector_active');
 			else
-				$(colorSelectors.children()[i]).removeClass('selectorActive');
+				$(colorSelectors.children()[i]).removeClass('selector_active');
 		}
 	}
 })
@@ -75,7 +75,7 @@ $("#canvas").mousedown((e) => {
 	else
 		drawSquare(e.offsetX, e.offsetY, paintBrushSize);
 });
-$("#canvasClear").mousedown(() => {
+$("#canvas_clear").mousedown(() => {
 	ctx.beginPath();
 	ctx.fillStyle = "white";
 	ctx.fillRect(0, 0, 900, 600);
